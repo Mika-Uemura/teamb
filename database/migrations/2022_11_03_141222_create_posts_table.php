@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained();
             $table->string('img_path');
             $table->foreignId('user_id')->constrained('users'); 
-            $table->integer('bookmark');
+            $table->integer('bookmark')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
