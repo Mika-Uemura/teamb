@@ -10,15 +10,17 @@
                 <div style='border:solid 1px; margin-bottom: 10px;'>
                     <p>イベントの日付：</p><input type="date">
                     <p>タイトル：<a href="/posts/{{ $post->id }}">{{ $post->title }}</a></p>
-                    <p>作成者：{{ $user->name }}</p>
+                   
                     {{--写真--}}
                     {{--<img src="{{ asset('storage/二郎.jpg')}}">--}}
                     <p>カテゴリー：{{ $post->category->name }}</a></p>
+                    @if($post->user_id==Auth::id())
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                         @csrf
                         @method('DELETE')
                         <button type="button" onclick="deletePost({{ $post->id }})">delete</button> 
                     </form>
+                    @endif
                 </div>
             @endforeach
         </div>
