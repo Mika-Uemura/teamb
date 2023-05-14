@@ -36,15 +36,23 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);
     }
 
-    public function edit(Post $post)
+    public function edit(Post $post, Category $category)
     {
-        return view('posts/edit')->with(['post' => $post]);
+        return view('posts/edit')->with(['post' => $post,'categories' => $category->get()]);
     }
 
     public function update(Request $request, Post $post)
     {
-        $input_post = $request['post'];
-        $post->fill($input_post)->save();
+        if($request->file('image')){
+             $img_path=Storage::putFile('public/img', $request->file('image'));
+             $img_path=str_replace('public','storage',$img_path);
+        }else{
+            $img_path=$post->img_path;
+        }
+       $input = $request['post'];
+        $input['img_path']=$img_path;
+        $input['user_id']=Auth::id();
+        $post->fill($input)->save();
 
         return redirect('/posts/' . $post->id);
     }
