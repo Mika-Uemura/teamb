@@ -31,7 +31,7 @@
                     @endforeach
                 </select>
             </div>
-            <input type="submit" value="保存"/>
+            <button type="submit">保存</button>
         </form>
         <div><a href="/">戻る</a></div>
  </x-app-layout>
