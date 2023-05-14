@@ -5,6 +5,7 @@
     
         <h1>詳細画面</h1>
         <div>
+            <p>日付：{{ $post->date }}</p>
             <p>タイトル：{{ $post->title }}</p>
             <p>本文：{{ $post->body }}</p>
             <p>カテゴリー：<a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a></p>
