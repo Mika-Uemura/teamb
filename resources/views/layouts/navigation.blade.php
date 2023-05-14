@@ -18,9 +18,11 @@
                     <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
                         {{ __('Index') }}
                     </x-nav-link>
+                     @if(Auth::user()->authority==1)
                     <x-nav-link :href="route('create')" :active="request()->routeIs('create')">
                         {{ __('create') }}
                     </x-nav-link>
+                    @endif
                     
                 </div>
             </div>
