@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -25,7 +27,11 @@ class PostController extends Controller
 
     public function store(Post $post, Request $request)
     {
+        $img_path=Storage::putFile('public/img', $request->file('image'));
+        $img_path=str_replace('public','storage',$img_path);
         $input = $request['post'];
+        $input['img_path']=$img_path;
+        $input['user_id']=Auth::id();
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }
