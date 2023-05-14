@@ -22,6 +22,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->integer('authority')->default(0); 
             $table->timestamps();
+            
         });
     }
 

@@ -22,6 +22,9 @@ class PostSeeder extends Seeder
             'category_id' => 1,
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
+            'img_path' => 'public/img/img1.png',
+            'user_id' =>1 ,
+
         ]);
 
         DB::table('posts')->insert([
@@ -30,6 +33,9 @@ class PostSeeder extends Seeder
             'category_id' => 2,
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
+            'img_path' => 'public/img/img1.png',
+            'user_id' =>1 ,
+
         ]);
 
         DB::table('posts')->insert([
@@ -38,6 +44,9 @@ class PostSeeder extends Seeder
             'category_id' => 2,
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
+            'img_path' => 'public/img/img1.png',
+            'user_id' =>1 ,
+
         ]);
     }
 }
