@@ -12,7 +12,7 @@
                     <p>イベントの日付</p>
                     <input type='text' name='post[date]' value="{{ $post->date }}">
                     <h2>タイトル</h2>
-                    <input type='text' name='post[date]' value="{{ $post->date }}">
+                    <input type='text' name='post[title]' value="{{ $post->title}}">
                 </div>
                 <div class='content__body'>
                     <h2>本文</h2>
