@@ -9,9 +9,10 @@
                 @csrf
                 @method('PUT')
                 <div class='content__title'>
-                     <p>イベントの日付：<a href="/posts/{{ $post->id }}">{{ $post->date }}</a></p>
+                    <p>イベントの日付</p>
+                    <input type='text' name='post[date]' value="{{ $post->date }}">
                     <h2>タイトル</h2>
-                    <input type='text' name='post[title]' value="{{ $post->title }}">
+                    <input type='text' name='post[date]' value="{{ $post->date }}">
                 </div>
                 <div class='content__body'>
                     <h2>本文</h2>

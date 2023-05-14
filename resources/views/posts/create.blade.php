@@ -8,7 +8,8 @@
         <form enctype="multipart/form-data" action="/posts" method="POST">
             @csrf
             <div>
-                <p>イベントの日付：<a href="/posts/{{ $post->id }}">{{ $post->date }}</a></p>
+                <p>イベントの日付</p>
+                <input type="text" name="post[date]" placeholder="年/月/日" value="{{ old('post.date') }}"/>
                 <h2>タイトル</h2>
                 <input type="text" name="post[title]" placeholder="タイトル" value="{{ old('post.title') }}"/>
                 <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
