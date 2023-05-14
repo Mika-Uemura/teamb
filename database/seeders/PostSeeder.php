@@ -22,8 +22,9 @@ class PostSeeder extends Seeder
             'category_id' => 1,
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'img_path' => 'public/img/img1.png',
+            'img_path' =>  'storage/img/img1.png',
             'user_id' =>1 ,
+            'date'=> '2023年5月14日',
 
         ]);
 
@@ -33,8 +34,9 @@ class PostSeeder extends Seeder
             'category_id' => 2,
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'img_path' => 'public/img/img1.png',
+            'img_path' => 'storage/img/img1.png',
             'user_id' =>1 ,
+            'date'=> '2023年5月14日',
 
         ]);
 
@@ -44,8 +46,9 @@ class PostSeeder extends Seeder
             'category_id' => 2,
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'img_path' => 'public/img/img1.png',
+            'img_path' =>  'storage/img/img1.png',
             'user_id' =>1 ,
+            'date'=> '2023年5月14日',
 
         ]);
     }
