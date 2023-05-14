@@ -14,6 +14,7 @@
                     {{--写真--}}
                     {{--<img src="{{ asset('storage/二郎.jpg')}}">--}}
                     <p>カテゴリー：{{ $post->category->name }}</a></p>
+                    @auth
                     @if($post->user_id==Auth::id())
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                         @csrf
@@ -21,6 +22,7 @@
                         <button type="button" onclick="deletePost({{ $post->id }})">delete</button> 
                     </form>
                     @endif
+                    @endauth
                 </div>
             @endforeach
         </div>
