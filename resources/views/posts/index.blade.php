@@ -11,12 +11,9 @@
         <div>
             @foreach ($posts as $post)
                 <div style='border:solid 1px; margin-bottom: 10px;'>
-                    <p>イベントの日付：</p><input type="date">
+                    <p>イベントの日付：{{ $post->date }}</p>
                     <p>タイトル：<a href="/posts/{{ $post->id }}">{{ $post->title }}</a></p>
                     <img src='{{asset($post->img_path)}}' alt='画像'>
-                   
-                    {{--写真--}}
-                    {{--<img src="{{ asset('storage/二郎.jpg')}}">--}}
                     <p>カテゴリー：{{ $post->category->name }}</a></p>
                     <p>{{$post->user->name}}</p>
                     @auth
